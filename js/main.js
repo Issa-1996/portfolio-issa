@@ -47,7 +47,7 @@ const projects = [
         description: 'Site web officiel de la commune de Touba Toul présentant les actualités, services et informations locales.',
         technologies: ['HTML5', 'CSS3', 'JavaScript', 'WordPress'],
         image: 'images/projects/commune touba toul.png',
-        demo: '#',
+        demo: 'https://commune-toubatoul.com/',
         code: '#',
     }
 ];
