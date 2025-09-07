@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issa SARR - Développeur Full Stack</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"></noscript>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4.0.0/dist/email.min.js"></script>
+</head>
+<body>
+    <header role="banner">
+        <nav aria-label="Navigation principale">
+            <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+            <div class="logo">
+                <a href="#accueil" aria-current="page">Issa SARR</a>
+            </div>
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#accueil" role="menuitem" aria-current="page">Accueil</a></li>
+                <li role="none"><a href="#apropos" role="menuitem">À Propos</a></li>
+                <li role="none"><a href="#competences" role="menuitem">Compétences</a></li>
+                <li role="none"><a href="#experiences" role="menuitem">Expériences</a></li>
+                <li role="none"><a href="#projets" role="menuitem">Projets</a></li>
+                <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
+            </ul>
+            <button class="burger" aria-label="Menu" aria-expanded="false" aria-controls="nav-links">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </button>
+        </nav>
+    </header>
+    <main id="main-content" tabindex="-1">
+
+    <section id="accueil" class="hero">
+        <!-- Carrousel de texte moderne -->
+        <div class="floating-carousel" role="region" aria-label="Présentation">
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <!-- Slide 1 -->
+                    <div class="carousel-item text-slide" role="group" aria-roledescription="slide" aria-label="1 sur 5">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Bonjour, je suis <span class="highlight">Issa SARR</span></h2>
+                            <p class="slide-subtitle">Développeur Full Stack Passionné</p>
+                            <div class="slide-text">
+                                <p>Création de solutions web innovantes et performantes</p>
+                                <a href="#contact" class="cta-button">Discutons de votre projet</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-item text-slide" role="group" aria-roledescription="slide" aria-label="2 sur 5">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Expertise <span class="highlight">Full Stack</span></h2>
+                            <p class="slide-subtitle">Frontend & Backend</p>
+                            <div class="slide-text">
+                                <p>Des interfaces utilisateur intuitives aux architectures serveur robustes</p>
+                                <a href="#competences" class="cta-button">Voir mes compétences</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 3 -->
+                    <div class="carousel-item text-slide" role="group" aria-roledescription="slide" aria-label="3 sur 5">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Projets <span class="highlight">Récents</span></h2>
+                            <p class="slide-subtitle">Solutions sur mesure</p>
+                            <div class="slide-text">
+                                <p>Découvrez mes réalisations et cas clients</p>
+                                <a href="#projets" class="cta-button">Voir mes projets</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4 -->
+                    <div class="carousel-item text-slide" role="group" aria-roledescription="slide" aria-label="4 sur 5">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Approche <span class="highlight">Client</span></h2>
+                            <p class="slide-subtitle">Écoute & Collaboration</p>
+                            <div class="slide-text">
+                                <p>Votre vision, ma technologie, une solution unique</p>
+                                <a href="#apropos" class="cta-button">En savoir plus</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 5 -->
+                    <div class="carousel-item text-slide" role="group" aria-roledescription="slide" aria-label="5 sur 5">
+                        <div class="slide-content">
+                            <h2 class="slide-title">Prêt à <span class="highlight">collaborer</span> ?</h2>
+                            <p class="slide-subtitle">Travaillons ensemble</p>
+                            <div class="slide-text">
+                                <p>Discutons de votre projet et trouvons la meilleure solution</p>
+                                <a href="#contact" class="cta-button">Me contacter</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="carousel-nav">
+                    <button class="carousel-btn prev" aria-label="Image précédente">
+                        <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                        <span class="sr-only">Précédent</span>
+                    </button>
+                    <div class="carousel-dots" role="tablist">
+                        <button class="dot active" role="tab" aria-selected="true" aria-controls="carousel-item-1" id="dot-1" aria-label="Afficher l'image 1"></button>
+                        <button class="dot" role="tab" aria-selected="false" aria-controls="carousel-item-2" id="dot-2" tabindex="-1" aria-label="Afficher l'image 2"></button>
+                        <button class="dot" role="tab" aria-selected="false" aria-controls="carousel-item-3" id="dot-3" tabindex="-1" aria-label="Afficher l'image 3"></button>
+                    </div>
+                    <button class="carousel-btn next" aria-label="Image suivante">
+                        <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                        <span class="sr-only">Suivant</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="apropos" class="about">
+        <h2>À Propos de Moi</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Développeur Full Stack, né le 5 septembre 1996 à Toubat Toul, avec 5 ans d'expérience professionnelle. Titulaire d'une licence en développement d'applications web et certifié par la Sonatel Académie, je suis passionné par la conception et l'optimisation de solutions web et mobiles. Je maîtrise les technologies back-end et front-end, ce qui me permet de développer des applications robustes, performantes et centrées sur l'expérience utilisateur.</p>
+                <div class="about-details">
+                    <div class="about-item">
+                        <i class="fas fa-briefcase"></i>
+                        <span>5+ ans d'expérience</span>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Licence en développement web</span>
+                    </div>
+                    <div class="about-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certifié Sonatel Académie</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="competences" class="skills">
+        <h2>Mes Compétences</h2>
+        <div class="skills-categories">
+            <div class="category">
+                <h3><i class="fas fa-server"></i> Back-end</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-symfony"></i>
+                        <h4>Symfony</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-leaf"></i>
+                        <h4>Spring Boot</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-laravel"></i>
+                        <h4>Laravel</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-php"></i>
+                        <h4>PHP</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-java"></i>
+                        <h4>Java</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3><i class="fas fa-desktop"></i> Front-end</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fab fa-angular"></i>
+                        <h4>Angular</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-bootstrap"></i>
+                        <h4>Bootstrap</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-html5"></i>
+                        <h4>HTML5/CSS3</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-js"></i>
+                        <h4>JavaScript</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-wordpress"></i>
+                        <h4>WordPress</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3><i class="fas fa-mobile-alt"></i> Mobile</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="ion-ionic"></i>
+                        <h4>Ionic</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-android"></i>
+                        <h4>Développement Mobile</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3><i class="fas fa-database"></i> Base de données & Outils</h3>
+                <div class="skills-container">
+                    <div class="skill">
+                        <i class="fas fa-database"></i>
+                        <h4>MySQL</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-git-alt"></i>
+                        <h4>Git/GitHub</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-project-diagram"></i>
+                        <h4>UML/Merise</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-palette"></i>
+                        <h4>Figma/Canva</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fas fa-tasks"></i>
+                        <h4>Trello</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-slack"></i>
+                        <h4>Slack</h4>
+                    </div>
+                    <div class="skill">
+                        <i class="fab fa-microsoft"></i>
+                        <h4>Microsoft Office</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experiences" class="experiences">
+        <h2>Expériences Professionnelles</h2>
+        <div class="timeline">
+            <!-- Expérience 1 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Mai 2021 - Aujourd'hui</div>
+                <div class="timeline-content">
+                    <h3>Développeur Web</h3>
+                    <h4>Département Informatique, COUD</h4>
+                    <ul>
+                        <li>Plateforme e-learning</li>
+                        <li>Logiciel de paie du personnel (Paie COUD)</li>
+                        <li>Gestion électronique des courriers</li>
+                        <li>Gestion des codifications (v1)</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Expérience 2 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Fév. 2025 - Aujourd'hui</div>
+                <div class="timeline-content">
+                    <h3>Professeur IT (Vacataire)</h3>
+                    <h4>IESMD</h4>
+                    <p>Enseignement en informatique</p>
+                </div>
+            </div>
+
+            <!-- Expérience 3 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Fév. 2025 - Aujourd'hui</div>
+                <div class="timeline-content">
+                    <h3>Développeur Full Stack / Consultant</h3>
+                    <h4>Bideew Technologies</h4>
+                    <ul>
+                        <li>Plateforme d'apprentissage en ligne (E-learning)</li>
+                        <li>Application de gestion de rendez-vous médicaux</li>
+                        <li>Site web : bideewtech.com</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Expérience 4 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">2024</div>
+                <div class="timeline-content">
+                    <h3>Freelance</h3>
+                    <ul>
+                        <li><strong>HMT Global Trading</strong> (30 jours) : Site e-commerce (hmtglobaltrading.com)</li>
+                        <li><strong>MDD Mariste</strong> (45 jours) : Plateforme de gestion de stock</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Expérience 5 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Juin 2022 - Sept. 2022</div>
+                <div class="timeline-content">
+                    <h3>Développeur Full Stack</h3>
+                    <h4>Commune de Touba Toul</h4>
+                    <p>Création du site officiel : commune-toubatoul.com</p>
+                </div>
+            </div>
+
+            <!-- Expérience 6 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Sept. - Oct. 2021</div>
+                <div class="timeline-content">
+                    <h3>Consultant Développeur</h3>
+                    <h4>Yewou Sénégal</h4>
+                    <p>Application de suivi nutritionnel pour patients diabétiques</p>
+                </div>
+            </div>
+
+            <!-- Expérience 7 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Fév. - Mai 2021</div>
+                <div class="timeline-content">
+                    <h3>Projet Tontine Sénégal</h3>
+                    <h4>UADB</h4>
+                    <p>Application de gestion de tontine avec fonctionnalités de dépôts, tirages et gestion des amendes</p>
+                </div>
+            </div>
+
+            <!-- Expérience 8 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Mars - Avril 2021</div>
+                <div class="timeline-content">
+                    <h3>Projet E-commerce</h3>
+                    <h4>Sonatel Académie</h4>
+                    <p>Développement d'une boutique en ligne complète</p>
+                </div>
+            </div>
+
+            <!-- Expérience 9 -->
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">Fév. - Mars 2021</div>
+                <div class="timeline-content">
+                    <h3>Application Transfert d'Argent</h3>
+                    <h4>Sonatel Académie</h4>
+                    <p>Développement d'une application de transfert d'argent avec gestion des transactions, états de compte et paiement de services</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projets" class="projects">
+        <h2>Mes Projets</h2>
+        <div class="projects-grid">
+            <!-- Les projets seront ajoutés dynamiquement via JavaScript -->
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contactez-moi</h2>
+        <form id="contact-form">
+            <input type="text" name="from_name" placeholder="Nom" required>
+            <input type="email" name="from_email" placeholder="Email" required>
+            <textarea name="message" placeholder="Votre message" required></textarea>
+            <button type="submit" class="cta-button">
+                <span class="button-text">Envoyer</span>
+                <div class="spinner hidden"></div>
+            </button>
+            <p id="form-status" class="form-status"></p>
+        </form>
+    </section>
+
+    </main>
+    <footer role="contentinfo">
+        <div class="social-links">
+            <a href="https://github.com/Issa-1996" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+            <a href="https://linkedin.com/in/issa-sarr-6259a81a3" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+            <a href="https://www.facebook.com/share/1JPuySXT5E/?mibextid=wwXIfr" aria-label="Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i><span class="sr-only">Facebook</span></a>
+        </div>
+        <p>&copy; 2024 Mon Portfolio. Tous droits réservés.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/main.js" defer></script>
+</body>
+</html>
