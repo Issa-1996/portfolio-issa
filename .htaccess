@@ -1,0 +1,15 @@
+Options -Indexes
+RewriteEngine On
+
+# Cacher l'extension .html dans l'URL
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Rediriger /index vers / (URL propre)
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^index\.html$ / [R=301,L,NC]
+
+# Rediriger les URLs avec .html vers sans .html
+RewriteCond %{THE_REQUEST} \s(.+)\.html[\s?] [NC]
+RewriteRule ^ %1 [R=301,L]

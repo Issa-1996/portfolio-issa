@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issa SARR — Développeur Full Stack</title>
+    <meta name="description" content="Portfolio de Issa SARR, Développeur Full Stack basé à Dakar, Sénégal.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Loader -->
+    <div id="loader">
+        <div class="loader-inner">
+            <span>I</span><span>S</span><span>.</span>
+        </div>
+    </div>
+
+    <!-- Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <nav class="container">
+            <a href="#accueil" class="logo">IS<span>.</span></a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="#accueil" class="nav-link">Accueil</a></li>
+                <li><a href="#apropos" class="nav-link">À Propos</a></li>
+                <li><a href="#competences" class="nav-link">Compétences</a></li>
+                <li><a href="#experiences" class="nav-link">Expériences</a></li>
+                <li><a href="#projets" class="nav-link">Projets</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ======== HERO ======== -->
+        <section id="accueil" class="hero">
+            <div class="hero-bg">
+                <div class="blob blob-1"></div>
+                <div class="blob blob-2"></div>
+                <div class="blob blob-3"></div>
+            </div>
+            <div class="hero-content">
+                <p class="hero-greeting">Bonjour, je suis</p>
+                <h1 class="hero-name">Issa <span class="gradient-text">SARR</span></h1>
+                <div class="hero-title-wrap">
+                    <span class="hero-title-prefix">Développeur </span>
+                    <span class="typed-text" id="typed"></span>
+                    <span class="cursor-blink">|</span>
+                </div>
+                <p class="hero-desc">
+                    Conception de solutions web innovantes et performantes.<br>
+                    Du backend robuste aux interfaces élégantes.
+                </p>
+                <div class="hero-btns">
+                    <a href="#projets" class="btn btn-primary">
+                        <i class="fas fa-rocket"></i> Voir mes projets
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-paper-plane"></i> Me contacter
+                    </a>
+                </div>
+                <div class="hero-socials">
+                    <a href="https://github.com/Issa-1996" target="_blank" rel="noopener" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/issa-sarr-6259a81a3" target="_blank" rel="noopener" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.facebook.com/share/1JPuySXT5E/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </div>
+            </div>
+            <a href="#apropos" class="scroll-indicator" aria-label="Défiler vers le bas">
+                <div class="scroll-line"></div>
+                <span>Défiler</span>
+            </a>
+        </section>
+
+        <!-- ======== ABOUT ======== -->
+        <section id="apropos" class="about section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">À Propos</span>
+                    <h2>Qui suis-je <span class="gradient-text">?</span></h2>
+                </div>
+                <div class="about-grid">
+                    <div class="about-visual reveal-left">
+                        <div class="about-card glass">
+                            <div class="about-avatar">
+                                <div class="avatar-placeholder">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="avatar-ring"></div>
+                            </div>
+                            <div class="about-badge">
+                                <i class="fas fa-circle-check"></i>
+                                Disponible pour des projets
+                            </div>
+                            <div class="about-card-info">
+                                <div class="info-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Dakar, Sénégal</span>
+                                </div>
+                                <div class="info-item">
+                                    <i class="fas fa-language"></i>
+                                    <span>Français, Wolof</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-info reveal-right">
+                        <p class="about-text">
+                            Développeur Full Stack passionné avec plus de <strong>5 ans d'expérience professionnelle</strong>. Titulaire d'une <strong>licence en développement d'applications web</strong> et certifié par la <strong>Sonatel Académie</strong>.
+                        </p>
+                        <p class="about-text">
+                            Je conçois et développe des solutions web et mobiles robustes, performantes et centrées sur l'expérience utilisateur. Ma double expertise backend et frontend me permet de prendre en charge un projet de bout en bout.
+                        </p>
+                        <div class="about-stats">
+                            <div class="stat">
+                                <span class="stat-number" data-target="5">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Ans d'exp.</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-target="10">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Projets</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-number" data-target="15">0</span><span class="stat-plus">+</span>
+                                <span class="stat-label">Technologies</span>
+                            </div>
+                        </div>
+                        <div class="about-tags">
+                            <span class="tag"><i class="fas fa-graduation-cap"></i> Licence Développement Web</span>
+                            <span class="tag"><i class="fas fa-certificate"></i> Certifié Sonatel Académie</span>
+                            <span class="tag"><i class="fas fa-briefcase"></i> COUD — Dakar</span>
+                        </div>
+                        <div class="about-languages">
+                            <h4 class="languages-title"><i class="fas fa-language"></i> Langues</h4>
+                            <div class="languages-list">
+                                <div class="lang-item">
+                                    <span class="lang-name">Wolof</span>
+                                    <span class="lang-level native">Langue maternelle</span>
+                                </div>
+                                <div class="lang-item">
+                                    <span class="lang-name">Français</span>
+                                    <span class="lang-level fluent">Courant</span>
+                                </div>
+                                <div class="lang-item">
+                                    <span class="lang-name">Anglais</span>
+                                    <span class="lang-level basic">Notions</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== SKILLS ======== -->
+        <section id="competences" class="skills section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Compétences</span>
+                    <h2>Mon <span class="gradient-text">Stack</span> Technique</h2>
+                </div>
+                <div class="skills-grid">
+                    <div class="skill-category glass reveal" style="--delay: 0s">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fas fa-server"></i></div>
+                            <h3>Back-end</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-php"></i> PHP</span>
+                            <span class="skill-tag"><i class="fab fa-laravel"></i> Laravel</span>
+                            <span class="skill-tag"><i class="fas fa-fire-flame-curved"></i> Symfony</span>
+                            <span class="skill-tag"><i class="fas fa-leaf"></i> Spring Boot</span>
+                            <span class="skill-tag"><i class="fab fa-java"></i> Java</span>
+                            <span class="skill-tag"><i class="fab fa-node-js"></i> Node.js</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass reveal" style="--delay: 0.1s">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fas fa-desktop"></i></div>
+                            <h3>Front-end</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fab fa-angular"></i> Angular</span>
+                            <span class="skill-tag"><i class="fab fa-react"></i> React</span>
+                            <span class="skill-tag"><i class="fab fa-html5"></i> HTML5</span>
+                            <span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</span>
+                            <span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span>
+                            <span class="skill-tag"><i class="fab fa-bootstrap"></i> Bootstrap</span>
+                            <span class="skill-tag"><i class="fab fa-wordpress"></i> WordPress</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass reveal" style="--delay: 0.2s">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fas fa-mobile-alt"></i></div>
+                            <h3>Mobile</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-bolt"></i> Ionic</span>
+                            <span class="skill-tag"><i class="fab fa-android"></i> Android</span>
+                        </div>
+                    </div>
+                    <div class="skill-category glass reveal" style="--delay: 0.3s">
+                        <div class="skill-cat-header">
+                            <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
+                            <h3>BDD & Outils</h3>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-database"></i> MySQL</span>
+                            <span class="skill-tag"><i class="fas fa-leaf"></i> MongoDB</span>
+                            <span class="skill-tag"><i class="fab fa-git-alt"></i> Git / GitHub</span>
+                            <span class="skill-tag"><i class="fas fa-project-diagram"></i> UML / Merise</span>
+                            <span class="skill-tag"><i class="fas fa-palette"></i> Figma</span>
+                            <span class="skill-tag"><i class="fab fa-trello"></i> Trello</span>
+                            <span class="skill-tag"><i class="fab fa-slack"></i> Slack</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== EXPERIENCES ======== -->
+        <section id="experiences" class="experiences section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Parcours</span>
+                    <h2>Expériences <span class="gradient-text">Professionnelles</span></h2>
+                </div>
+                <div class="timeline">
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Nov. 2025 — Fév. 2026</span>
+                            </div>
+                            <h3>Freelance — Développeur Backend</h3>
+                            <h4><i class="fas fa-building"></i> YEKSINA Transport — France (remote)</h4>
+                            <p>Développement backend de l'application de gestion des livraisons au Sénégal (style Uber). API REST, gestion des livreurs/clients, paiements mobiles (Orange Money, Wave) et notifications push Firebase.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Oct. — Déc. 2025</span>
+                            </div>
+                            <h3>Consultant — Opérateur de Systèmes Informatiques</h3>
+                            <h4><i class="fas fa-building"></i> WEBGRM — Cité Keur Gorgui, Dakar</h4>
+                            <p>Installation, maintenance et développement de solutions informatiques en collaboration avec l'équipe technique.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Fév. 2025 — Aujourd'hui</span>
+                                <span class="timeline-badge current">Actuel</span>
+                            </div>
+                            <h3>Développeur Full Stack / Consultant</h3>
+                            <h4><i class="fas fa-building"></i> Bideew Technologies — Dakar</h4>
+                            <ul>
+                                <li>Plateforme d'apprentissage en ligne (E-learning)</li>
+                                <li>Application de gestion de rendez-vous médicaux</li>
+                                <li>Site web officiel : bideewtech.com</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Fév. 2025 — Aujourd'hui</span>
+                                <span class="timeline-badge current">Actuel</span>
+                            </div>
+                            <h3>Professeur Informatique (Vacataire)</h3>
+                            <h4><i class="fas fa-chalkboard-teacher"></i> IESMD — Dakar</h4>
+                            <p>Enseignement de l'informatique et du développement web.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Mai 2021 — Aujourd'hui</span>
+                                <span class="timeline-badge current">Poste actuel</span>
+                            </div>
+                            <h3>Développeur Web</h3>
+                            <h4><i class="fas fa-building"></i> Département Informatique, COUD — Dakar</h4>
+                            <ul>
+                                <li>Plateforme e-learning universitaire</li>
+                                <li>Logiciel de paie du personnel (PayCOUD)</li>
+                                <li>Gestion électronique des courriers</li>
+                                <li>Gestion des codifications étudiantes (CampusCOUD)</li>
+                                <li>Portail d'aide sociale étudiant</li>
+                                <li>Système de réclamations & sécurité campus</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Mai — Déc. 2023</span>
+                            </div>
+                            <h3>Formateur Kids</h3>
+                            <h4><i class="fas fa-building"></i> Simplon Digital — Dakar</h4>
+                            <ul>
+                                <li>Initiation au codage avec et sans écran</li>
+                                <li>Robotique ludique, sensibilisation à l'informatique pour enfants</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Juil. — Sept. 2023</span>
+                            </div>
+                            <h3>Formateur IT</h3>
+                            <h4><i class="fas fa-building"></i> SISTECH — Dakar</h4>
+                            <p>Initiation bureautique : Word, Excel, PowerPoint. Découverte de l'ordinateur.</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Juin — Sept. 2022</span>
+                            </div>
+                            <h3>Développeur Full Stack</h3>
+                            <h4><i class="fas fa-building"></i> Commune de Touba Toul — Sénégal</h4>
+                            <p>Création du site officiel de la commune : commune-toubatoul.com</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Jan. — Mars 2022</span>
+                            </div>
+                            <h3>Freelance — Développeur Web</h3>
+                            <ul>
+                                <li><strong>HMT Global Trading</strong> — Site e-commerce (hmtglobaltrading.com)</li>
+                                <li><strong>MDD Mariste</strong> — Plateforme de gestion de stock</li>
+                                <li><strong>Aulaamas Darou Salam</strong> — Suivi client, commandes et facturation</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item reveal">
+                        <div class="timeline-marker"><div class="marker-dot"></div></div>
+                        <div class="timeline-card glass">
+                            <div class="timeline-header">
+                                <span class="timeline-date"><i class="far fa-calendar-alt"></i> Sept. — Oct. 2021</span>
+                            </div>
+                            <h3>Consultant Développeur</h3>
+                            <h4><i class="fas fa-building"></i> Yewou Sénégal — Dakar</h4>
+                            <p>Application de suivi nutritionnel pour patients diabétiques.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ======== PROJECTS ======== -->
+        <section id="projets" class="projects section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Réalisations</span>
+                    <h2>Mes <span class="gradient-text">Projets</span></h2>
+                </div>
+                <div class="projects-filter reveal">
+                    <button class="filter-btn active" data-filter="all">Tous <span class="filter-count" id="count-all"></span></button>
+                    <button class="filter-btn" data-filter="web">Web <span class="filter-count" id="count-web"></span></button>
+                    <button class="filter-btn" data-filter="api">API / Backend <span class="filter-count" id="count-api"></span></button>
+                    <button class="filter-btn" data-filter="mobile">Mobile <span class="filter-count" id="count-mobile"></span></button>
+                </div>
+                <div class="projects-grid" id="projects-grid"></div>
+            </div>
+        </section>
+
+        <!-- ======== CONTACT ======== -->
+        <section id="contact" class="contact section">
+            <div class="container">
+                <div class="section-header reveal">
+                    <span class="section-tag">Contact</span>
+                    <h2>Travaillons <span class="gradient-text">Ensemble</span></h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info reveal-left">
+                        <p class="contact-desc">
+                            Vous avez un projet en tête ? Je suis disponible pour des missions freelance, des consultations ou des opportunités à plein temps. N'hésitez pas !
+                        </p>
+                        <div class="contact-items">
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                                <div>
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">sarraseydainassasarr@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                                <div>
+                                    <span class="contact-label">Téléphone</span>
+                                    <span class="contact-value">+221 77 945 56 66</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                                <div>
+                                    <span class="contact-label">Localisation</span>
+                                    <span class="contact-value">Cambérène 2, Dakar, Sénégal</span>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon"><i class="fas fa-circle-check"></i></div>
+                                <div>
+                                    <span class="contact-label">Statut</span>
+                                    <span class="contact-value available">Disponible pour des projets</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="https://github.com/Issa-1996" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                            <a href="https://linkedin.com/in/issa-sarr-6259a81a3" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.facebook.com/share/1JPuySXT5E/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        </div>
+                    </div>
+                    <div class="contact-form-wrap glass reveal-right">
+                        <form id="contact-form" novalidate>
+                            <div class="form-group">
+                                <input type="text" name="from_name" id="from_name" placeholder=" " required autocomplete="name">
+                                <label for="from_name">Votre nom</label>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="from_email" id="from_email" placeholder=" " required autocomplete="email">
+                                <label for="from_email">Votre email</label>
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" placeholder=" " rows="5" required></textarea>
+                                <label for="message">Votre message</label>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+                                <span class="btn-text"><i class="fas fa-paper-plane"></i> Envoyer le message</span>
+                                <div class="spinner hidden"></div>
+                            </button>
+                            <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <a href="#accueil" class="footer-logo">IS<span>.</span></a>
+                <p>Développeur Full Stack — Dakar, Sénégal</p>
+                <div class="footer-socials">
+                    <a href="https://github.com/Issa-1996" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/issa-sarr-6259a81a3" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.facebook.com/share/1JPuySXT5E/?mibextid=wwXIfr" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+                <p class="footer-copy">&copy; 2025 Issa SARR. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Retour en haut">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
