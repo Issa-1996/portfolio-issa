@@ -282,6 +282,16 @@ const projects = [
         image: null,
         link: null,
         icon: 'fas fa-motorcycle'
+    },
+    {
+        id: 11,
+        title: 'Gestion BTP',
+        categories: ['web'],
+        desc: "Application complète de gestion de chantiers BTP (Bâtiment et Travaux Publics). Gestion des clients, employés, matériaux, devis, factures, paie, pointage et suivi financier en temps réel.",
+        tech: ['PHP 8', 'MySQL', 'Bootstrap 5', 'Chart.js', 'Vite'],
+        image: null,
+        link: null,
+        icon: 'fas fa-hard-hat'
     }
 ];
 
