@@ -292,6 +292,16 @@ const projects = [
         image: null,
         link: null,
         icon: 'fas fa-hard-hat'
+    },
+    {
+        id: 12,
+        title: 'Gestion de Stocks',
+        categories: ['web', 'api'],
+        desc: "Application full-stack de gestion d'inventaire. Suivi des produits, ventes, commandes fournisseurs, alertes de stock automatiques, export Excel/PDF et tableau de bord analytique en temps réel.",
+        tech: ['Laravel 12', 'PHP 8.2', 'Sanctum', 'Angular 19', 'TypeScript', 'SQLite'],
+        image: null,
+        link: null,
+        icon: 'fas fa-boxes'
     }
 ];
 
