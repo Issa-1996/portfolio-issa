@@ -322,6 +322,16 @@ const projects = [
         image: 'images/projects/logo-removebg-preview.png',
         link: null,
         icon: 'fas fa-graduation-cap'
+    },
+    {
+        id: 15,
+        title: 'Bidew Academy',
+        categories: ['web'],
+        desc: "Plateforme LMS complète (frontend Angular) connectée à l'API Bidew Academy. Cours vidéo, leçons texte, quiz interactifs, suivi de progression, génération de certificats PDF et authentification Google OAuth.",
+        tech: ['Angular 19', 'TypeScript', 'Angular Material', 'Bootstrap 5', 'Firebase', 'jsPDF'],
+        image: 'images/projects/logo-removebg-preview.png',
+        link: null,
+        icon: 'fas fa-laptop-code'
     }
 ];
 
