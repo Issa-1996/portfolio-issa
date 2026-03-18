@@ -410,14 +410,13 @@ button { font-family: var(--font-main); }
     width: 148px; height: 148px;
     margin: 0 auto 28px;
 }
-.avatar-placeholder {
+.avatar-img {
     width: 100%; height: 100%;
     border-radius: 50%;
-    background: rgba(99, 102, 241, 0.08);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 3.8rem;
-    color: rgba(99, 102, 241, 0.5);
-    border: 2px solid rgba(99, 102, 241, 0.2);
+    object-fit: cover;
+    object-position: top;
+    border: 3px solid rgba(99, 102, 241, 0.4);
+    display: block;
 }
 .avatar-ring {
     position: absolute;
