@@ -302,6 +302,16 @@ const projects = [
         image: null,
         link: null,
         icon: 'fas fa-boxes'
+    },
+    {
+        id: 13,
+        title: 'Gestion Médicale',
+        categories: ['web', 'api'],
+        desc: "Plateforme hospitalière complète de gestion des patients, consultations, admissions, rendez-vous et personnel médical. Gestion des dossiers médicaux, planification des rotations et suivi des transferts inter-services.",
+        tech: ['Laravel 11', 'PHP 8.2', 'Sanctum', 'Swagger', 'MySQL'],
+        image: null,
+        link: null,
+        icon: 'fas fa-hospital'
     }
 ];
 
