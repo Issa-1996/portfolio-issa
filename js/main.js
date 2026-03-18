@@ -312,6 +312,16 @@ const projects = [
         image: null,
         link: null,
         icon: 'fas fa-hospital'
+    },
+    {
+        id: 14,
+        title: 'Bidew Academy API',
+        categories: ['web', 'api'],
+        desc: "API RESTful complète pour une plateforme e-learning. Gestion des cours, leçons, quiz, évaluations, suivi de progression des apprenants et génération automatique de certificats PDF. Authentification multi-rôles avec support OAuth Google.",
+        tech: ['Laravel 12', 'PHP 8.2', 'Sanctum', 'OAuth Google', 'Swagger', 'TailwindCSS', 'MySQL'],
+        image: 'images/projects/logo-removebg-preview.png',
+        link: null,
+        icon: 'fas fa-graduation-cap'
     }
 ];
 
