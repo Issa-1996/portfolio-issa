@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MAISON ÉLITE — Vitrine</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root{
+  --gold:#C9A84C;--gold2:#e8c97a;
+  --dark:#0e0e0e;--dark2:#161616;--dark3:#1f1f1f;
+  --white:#ffffff;--muted:#888;
+  --border:rgba(201,168,76,0.18);--border2:rgba(201,168,76,0.35);
+  --pill-vet:#1a3a20;--pill-vet-t:#6fcf82;
+  --pill-auto:#0d2a40;--pill-auto-t:#5bb8f5;
+  --pill-elec:#3a2a0a;--pill-elec-t:#e8c97a;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--dark);color:var(--white);overflow-x:hidden;cursor:none}
+
+/* CURSOR */
+#cursor{width:10px;height:10px;background:var(--gold);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+#cursor-ring{width:36px;height:36px;border:1px solid rgba(201,168,76,.5);border-radius:50%;position:fixed;top:0;left:0;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:width .3s,height .3s}
+
+/* LOADER */
+#loader{position:fixed;inset:0;background:var(--dark);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:9000;transition:opacity .7s,visibility .7s}
+#loader.gone{opacity:0;visibility:hidden}
+.loader-logo{font-family:'Playfair Display',serif;font-size:36px;letter-spacing:6px;margin-bottom:2rem;opacity:0;animation:fadeIn .8s .3s forwards}
+.loader-logo span{color:var(--gold)}
+.loader-bar-wrap{width:200px;height:1px;background:rgba(255,255,255,.1);overflow:hidden}
+.loader-bar{height:100%;width:0;background:var(--gold);animation:loadBar 1.5s .6s ease forwards}
+.loader-pct{font-size:11px;letter-spacing:2px;color:var(--muted);margin-top:12px;opacity:0;animation:fadeIn .5s .8s forwards}
+@keyframes loadBar{to{width:100%}}
+@keyframes fadeIn{to{opacity:1}}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:72px;background:rgba(14,14,14,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.logo{font-family:'Playfair Display',serif;font-size:20px;letter-spacing:4px;text-transform:uppercase}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links li{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);cursor:pointer;position:relative;padding-bottom:2px;transition:color .25s}
+.nav-links li::after{content:'';position:absolute;bottom:0;left:0;right:100%;height:1px;background:var(--gold);transition:right .3s ease}
+.nav-links li:hover::after,.nav-links li.active::after{right:0}
+.nav-links li:hover,.nav-links li.active{color:var(--white)}
+.nav-cta{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;border:1px solid var(--gold);color:var(--gold);background:transparent;border-radius:2px;padding:9px 22px;cursor:pointer;transition:background .25s,color .25s}
+.nav-cta:hover{background:var(--gold);color:var(--dark)}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;padding:8rem 2rem 5rem}
+.hero-bg-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,.04) 1px,transparent 1px);background-size:60px 60px;animation:gridMove 20s linear infinite}
+@keyframes gridMove{to{background-position:60px 60px}}
+.hero-glow{position:absolute;top:50%;left:50%;width:600px;height:600px;background:radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 70%);transform:translate(-50%,-50%);animation:gPulse 4s ease-in-out infinite}
+@keyframes gPulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.15)}}
+.hero-eyebrow{font-size:10px;letter-spacing:5px;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;opacity:0;transform:translateY(20px);animation:slideUp .8s 1.7s ease forwards}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(52px,8vw,96px);font-weight:700;line-height:1.0;margin-bottom:1.5rem;opacity:0;transform:translateY(30px);animation:slideUp .9s 1.9s ease forwards}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:15px;color:var(--muted);line-height:1.8;max-width:500px;margin:0 auto 3rem;opacity:0;transform:translateY(20px);animation:slideUp .8s 2.1s ease forwards}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;opacity:0;animation:fadeIn .8s 2.3s forwards}
+.btn-primary{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;background:var(--gold);color:var(--dark);border:none;border-radius:2px;padding:14px 32px;cursor:pointer;transition:transform .2s,background .2s}
+.btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
+.btn-secondary{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:500;background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2);border-radius:2px;padding:14px 32px;cursor:pointer;transition:border-color .25s,color .25s,transform .2s}
+.btn-secondary:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 2.7s forwards}
+.hero-scroll span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--muted)}
+.scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sLine 2s ease-in-out infinite}
+@keyframes sLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* STATS */
+.stats-band{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--dark2)}
+.stat{padding:2.5rem 2rem;text-align:center;border-right:1px solid var(--border);position:relative;overflow:hidden;transition:background .3s}
+.stat:last-child{border-right:none}
+.stat:hover{background:rgba(201,168,76,.04)}
+.stat-num{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:var(--gold);display:block;margin-bottom:6px}
+.stat-label{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+
+/* MARQUEE */
+.marquee-wrap{overflow:hidden;padding:1.5rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin-bottom:0;background:var(--dark2)}
+.marquee-track{display:flex;gap:4rem;white-space:nowrap;animation:marquee 22s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee-item{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:1rem;flex-shrink:0;transition:color .2s}
+.marquee-item:hover{color:var(--gold)}
+.marquee-dot{width:4px;height:4px;background:var(--gold);border-radius:50%;flex-shrink:0}
+
+/* FILTER */
+.filter-section{padding:3rem 3rem 0;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.filter-divider{width:1px;height:20px;background:var(--border2);margin:0 4px}
+.ftab{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;padding:8px 20px;border-radius:2px;border:1px solid transparent;background:transparent;color:var(--muted);cursor:pointer;transition:all .25s}
+.ftab:hover{color:var(--white);border-color:var(--border2)}
+.ftab.active{background:var(--gold);color:var(--dark);border-color:var(--gold);font-weight:600}
+
+/* CATALOGUE */
+.catalogue{padding:3rem}
+.cat-section{margin-bottom:5rem}
+.cat-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.cat-title{font-family:'Playfair Display',serif;font-size:28px;font-weight:400}
+.cat-title em{font-style:italic;color:var(--gold);margin-right:12px}
+.cat-line{flex:1;height:1px;background:linear-gradient(to right,var(--border2),transparent);margin:0 1.5rem}
+.cat-count{font-size:11px;letter-spacing:2px;color:var(--muted);text-transform:uppercase;flex-shrink:0}
+
+/* PRODUCT GRID */
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1.5px;border:1.5px solid var(--border)}
+
+/* PRODUCT CARD */
+.product-card{background:var(--dark2);position:relative;overflow:hidden;cursor:pointer;transition:background .35s}
+.product-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.07),transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none}
+.product-card:hover{background:var(--dark3)}
+.product-card:hover::after{opacity:1}
+.card-img{height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;position:relative;overflow:hidden;background:rgba(255,255,255,.02);border-bottom:1px solid var(--border);transition:background .3s}
+.product-card:hover .card-img{background:rgba(201,168,76,.04)}
+.card-img-inner{transition:transform .45s cubic-bezier(.23,1.2,.32,1);filter:drop-shadow(0 10px 30px rgba(201,168,76,.15))}
+.product-card:hover .card-img-inner{transform:translateY(-8px) scale(1.1)}
+.card-shimmer{position:absolute;top:-50%;left:-60%;width:40%;height:200%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.05),transparent);transform:skewX(-15deg);transition:left .6s ease}
+.product-card:hover .card-shimmer{left:130%}
+.cat-pill{position:absolute;top:14px;left:14px;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:4px 10px;border-radius:2px;z-index:2}
+.pill-vet{background:var(--pill-vet);color:var(--pill-vet-t)}
+.pill-auto{background:var(--pill-auto);color:var(--pill-auto-t)}
+.pill-elec{background:var(--pill-elec);color:var(--pill-elec-t)}
+.card-body{padding:1.5rem;position:relative;z-index:1}
+.card-ref{font-size:10px;letter-spacing:2px;color:var(--muted);margin-bottom:8px;text-transform:uppercase}
+.card-name{font-family:'Playfair Display',serif;font-size:18px;font-weight:400;margin-bottom:8px;transition:color .25s}
+.product-card:hover .card-name{color:var(--gold)}
+.card-desc{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.card-footer{display:flex;align-items:center;justify-content:space-between}
+.ask-btn{font-size:10px;letter-spacing:2px;text-transform:uppercase;font-family:'Jost',sans-serif;font-weight:600;color:var(--gold);background:transparent;border:1px solid var(--border2);border-radius:2px;padding:7px 16px;cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.ask-btn:hover{background:var(--gold);color:var(--dark);border-color:var(--gold)}
+.card-arrow{width:32px;height:32px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--muted);transition:border-color .25s,color .25s,transform .3s}
+.product-card:hover .card-arrow{border-color:var(--gold);color:var(--gold);transform:rotate(45deg)}
+
+/* CTA */
+.cta-section{margin:0 3rem 4rem;border:1px solid var(--border);padding:4rem;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:2rem}
+.cta-section::before{content:'';position:absolute;top:-50px;right:-50px;width:280px;height:280px;border:1px solid var(--border);border-radius:50%}
+.cta-section::after{content:'';position:absolute;top:0;right:0;width:180px;height:180px;border:1px solid rgba(201,168,76,.08);border-radius:50%}
+.cta-eyebrow{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.cta-title{font-family:'Playfair Display',serif;font-size:36px;font-weight:400;margin-bottom:1rem;line-height:1.2}
+.cta-desc{font-size:14px;color:var(--muted);line-height:1.8;max-width:450px}
+.cta-actions{display:flex;gap:12px;flex-shrink:0;position:relative;z-index:1}
+
+/* FOOTER */
+footer{background:var(--dark2);border-top:1px solid var(--border);padding:3rem;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:2rem}
+.footer-logo{font-family:'Playfair Display',serif;font-size:18px;letter-spacing:3px;text-transform:uppercase}
+.footer-logo span{color:var(--gold)}
+.footer-center{text-align:center}
+.footer-tagline{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted)}
+.footer-right{text-align:right;font-size:11px;color:var(--muted);letter-spacing:1px}
+.footer-links{display:flex;gap:1.5rem;justify-content:flex-end;margin-bottom:6px}
+.footer-links span{cursor:pointer;transition:color .2s}
+.footer-links span:hover{color:var(--gold)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.hidden{display:none!important}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:0 1.25rem}
+  .nav-links{display:none}
+  .hero-title{font-size:48px}
+  .stats-band{grid-template-columns:1fr}
+  .stat{border-right:none;border-bottom:1px solid var(--border)}
+  .filter-section{padding:2rem 1.25rem 0}
+  .catalogue{padding:2rem 1.25rem}
+  .cta-section{flex-direction:column;margin:0 1.25rem 3rem;padding:2.5rem 1.5rem}
+  .cta-actions{width:100%}
+  footer{grid-template-columns:1fr;text-align:center}
+  .footer-links,.footer-right{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<div id="loader">
+  <div class="loader-logo">MAISON <span>ÉLITE</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-pct">Chargement en cours…</div>
+</div>
+
+<nav>
+  <div class="logo">Maison <span>Élite</span></div>
+  <ul class="nav-links">
+    <li class="active" onclick="filterCat('all',this)">Accueil</li>
+    <li onclick="filterCat('vetement',this)">Vêtements</li>
+    <li onclick="filterCat('automobile',this)">Automobile</li>
+    <li onclick="filterCat('electromenager',this)">Électroménager</li>
+  </ul>
+  <button class="nav-cta" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contact</button>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-glow"></div>
+  <p class="hero-eyebrow">Vitrine officielle · Dakar, Sénégal</p>
+  <h1 class="hero-title">L'excellence<br>à votre <em>portée.</em></h1>
+  <p class="hero-sub">Vêtements raffinés, pièces automobiles de qualité et électroménager performant. Contactez-nous pour toute demande de prix ou disponibilité.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" onclick="document.querySelector('.catalogue').scrollIntoView({behavior:'smooth'})">Découvrir la collection</button>
+    <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Nous contacter</button>
+  </div>
+  <div class="hero-scroll">
+    <span>Défiler</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<div class="stats-band reveal">
+  <div class="stat"><span class="stat-num" data-target="12">0</span><span class="stat-label">Produits en vitrine</span></div>
+  <div class="stat"><span class="stat-num" data-target="3">0</span><span class="stat-label">Catégories</span></div>
+  <div class="stat"><span class="stat-num" data-target="100">0</span><span class="stat-label">% Qualité garantie</span></div>
+</div>
+
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item"><span class="marquee-dot"></span>Vêtements</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Automobile</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Électroménager</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Qualité Premium</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Dakar, Sénégal</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Service Client</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Vêtements</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Automobile</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Électroménager</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Qualité Premium</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Dakar, Sénégal</span>
+    <span class="marquee-item"><span class="marquee-dot"></span>Service Client</span>
+  </div>
+</div>
+
+<div class="filter-section reveal">
+  <button class="ftab active" id="f-all" onclick="filterCat('all',null)">Tout</button>
+  <div class="filter-divider"></div>
+  <button class="ftab" id="f-vetement" onclick="filterCat('vetement',null)">👗 Vêtements</button>
+  <button class="ftab" id="f-automobile" onclick="filterCat('automobile',null)">🚗 Automobile</button>
+  <button class="ftab" id="f-electromenager" onclick="filterCat('electromenager',null)">🏠 Électroménager</button>
+</div>
+
+<main class="catalogue">
+
+  <section class="cat-section reveal" id="sec-vetement">
+    <div class="cat-header">
+      <h2 class="cat-title"><em>01</em> Vêtements</h2>
+      <div class="cat-line"></div>
+      <span class="cat-count">4 articles</span>
+    </div>
+    <div class="products-grid">
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-vet">Vêtement</span><span class="card-img-inner">👗</span></div><div class="card-body"><div class="card-ref">Réf. VET-001</div><div class="card-name">Robe d'été fleurie</div><div class="card-desc">Tissu léger et respirant, coupe moderne, disponible en plusieurs tailles et coloris.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-vet">Vêtement</span><span class="card-img-inner">👔</span></div><div class="card-body"><div class="card-ref">Réf. VET-002</div><div class="card-name">Chemise en lin homme</div><div class="card-desc">Mélange coton-lin respirant, coupe droite, idéale pour toutes les saisons.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-vet">Vêtement</span><span class="card-img-inner">👟</span></div><div class="card-body"><div class="card-ref">Réf. VET-003</div><div class="card-name">Sneakers blanc cassé</div><div class="card-desc">Semelle confortable, design épuré, matière premium. Plusieurs pointures disponibles.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-vet">Vêtement</span><span class="card-img-inner">🧥</span></div><div class="card-body"><div class="card-ref">Réf. VET-004</div><div class="card-name">Veste en jean classique</div><div class="card-desc">Coupe unisexe, denim robuste, finitions soignées. Style intemporel.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+    </div>
+  </section>
+
+  <section class="cat-section reveal" id="sec-automobile">
+    <div class="cat-header">
+      <h2 class="cat-title"><em>02</em> Automobile</h2>
+      <div class="cat-line"></div>
+      <span class="cat-count">4 articles</span>
+    </div>
+    <div class="products-grid">
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-auto">Automobile</span><span class="card-img-inner">🛞</span></div><div class="card-body"><div class="card-ref">Réf. AUTO-001</div><div class="card-name">Pneu toutes saisons</div><div class="card-desc">Haute adhérence sur route mouillée et sèche. Compatible plusieurs marques, dimensions variées.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-auto">Automobile</span><span class="card-img-inner">📷</span></div><div class="card-body"><div class="card-ref">Réf. AUTO-002</div><div class="card-name">Caméra de recul HD</div><div class="card-desc">Résolution 1080p, vision nocturne intégrée, installation facile sur tous véhicules.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-auto">Automobile</span><span class="card-img-inner">🛢️</span></div><div class="card-body"><div class="card-ref">Réf. AUTO-003</div><div class="card-name">Huile moteur 5W40</div><div class="card-desc">Synthèse complète, protection optimale toutes températures. Compatible toutes motorisations.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-auto">Automobile</span><span class="card-img-inner">🔧</span></div><div class="card-body"><div class="card-ref">Réf. AUTO-004</div><div class="card-name">Kit entretien moteur</div><div class="card-desc">Filtre à air, filtre à huile, bougies et courroie. Adapté aux véhicules courants.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+    </div>
+  </section>
+
+  <section class="cat-section reveal" id="sec-electromenager">
+    <div class="cat-header">
+      <h2 class="cat-title"><em>03</em> Électroménager</h2>
+      <div class="cat-line"></div>
+      <span class="cat-count">4 articles</span>
+    </div>
+    <div class="products-grid">
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-elec">Électroménager</span><span class="card-img-inner">🧊</span></div><div class="card-body"><div class="card-ref">Réf. ELEC-001</div><div class="card-name">Réfrigérateur 280 L</div><div class="card-desc">Classe A+, congélateur intégré, faible consommation. Garantie incluse.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-elec">Électroménager</span><span class="card-img-inner">🫧</span></div><div class="card-body"><div class="card-ref">Réf. ELEC-002</div><div class="card-name">Machine à laver 7 kg</div><div class="card-desc">12 programmes, faible niveau sonore, départ différé. Idéale pour toute la famille.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-elec">Électroménager</span><span class="card-img-inner">❄️</span></div><div class="card-body"><div class="card-ref">Réf. ELEC-003</div><div class="card-name">Climatiseur 12 000 BTU</div><div class="card-desc">Chaud/froid, télécommande incluse, mode turbo et silencieux. Installation rapide.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+      <div class="product-card"><div class="card-img"><div class="card-shimmer"></div><span class="cat-pill pill-elec">Électroménager</span><span class="card-img-inner">🍹</span></div><div class="card-body"><div class="card-ref">Réf. ELEC-004</div><div class="card-name">Mixeur blender pro</div><div class="card-desc">850 W, 6 vitesses, bol inox 1,5 L. Moteur silencieux, lames inoxydables.</div><div class="card-footer"><button class="ask-btn">Demander le prix</button><div class="card-arrow">↗</div></div></div></div>
+    </div>
+  </section>
+
+</main>
+
+<div class="cta-section reveal" id="contact">
+  <div>
+    <div class="cta-eyebrow">Un produit vous intéresse ?</div>
+    <h2 class="cta-title">Parlons-en<br>ensemble.</h2>
+    <p class="cta-desc">Contactez-nous pour connaître les prix, les disponibilités et les modalités de livraison. Notre équipe vous répond rapidement.</p>
+  </div>
+  <div class="cta-actions">
+    <button class="btn-primary" onclick="window.location.href='tel:+221XXXXXXXX'">📞 Appeler</button>
+    <button class="btn-secondary" onclick="window.open('https://wa.me/221XXXXXXXX','_blank')">💬 WhatsApp</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-logo">Maison <span>Élite</span></div>
+  <div class="footer-center"><div class="footer-tagline">Qualité · Style · Fiabilité</div></div>
+  <div class="footer-right">
+    <div class="footer-links">
+      <span onclick="filterCat('vetement',null)">Vêtements</span>
+      <span onclick="filterCat('automobile',null)">Automobile</span>
+      <span onclick="filterCat('electromenager',null)">Électroménager</span>
+    </div>
+    <div>© 2025 SISTECH · Dakar, Sénégal</div>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cur=document.getElementById('cursor'),ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px'});
+(function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing)})();
+document.querySelectorAll('button,a,.product-card,.ftab,.nav-links li').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{cur.style.width='20px';cur.style.height='20px';ring.style.width='60px';ring.style.height='60px'});
+  el.addEventListener('mouseleave',()=>{cur.style.width='10px';cur.style.height='10px';ring.style.width='36px';ring.style.height='36px'});
+});
+
+/* LOADER */
+window.addEventListener('load',()=>setTimeout(()=>document.getElementById('loader').classList.add('gone'),1700));
+
+/* FILTER */
+function filterCat(cat,navEl){
+  ['all','vetement','automobile','electromenager'].forEach(c=>{
+    const b=document.getElementById('f-'+c);if(b)b.classList.toggle('active',c===cat);
+  });
+  if(navEl){document.querySelectorAll('.nav-links li').forEach(l=>l.classList.remove('active'));navEl.classList.add('active')}
+  ['vetement','automobile','electromenager'].forEach(c=>{
+    document.getElementById('sec-'+c).classList.toggle('hidden',cat!=='all'&&cat!==c);
+  });
+}
+
+/* SCROLL REVEAL */
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+/* COUNTER */
+function animCount(el,target){
+  let v=0;const step=target/50;
+  const t=setInterval(()=>{v=Math.min(v+step,target);el.textContent=Math.round(v)+(target===100?'%':'');if(v>=target)clearInterval(t)},30);
+}
+const cObs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){document.querySelectorAll('.stat-num').forEach(el=>animCount(el,+el.dataset.target));cObs.disconnect()}})},{threshold:.5});
+const sb=document.querySelector('.stats-band');if(sb)cObs.observe(sb);
+</script>
+</body>
+</html>
